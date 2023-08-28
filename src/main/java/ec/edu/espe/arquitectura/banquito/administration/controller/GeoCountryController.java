@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/geoCountry")
+@CrossOrigin
 public class GeoCountryController {
     private final GeoCountryService geoCountryService;
 
