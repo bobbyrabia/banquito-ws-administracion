@@ -13,7 +13,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://0.0.0.0")
+                        .allowedOrigins("http://0.0.0.0","http://localhost:4200","*","https://apiv18-62gh6lrj.uc.gateway.dev")
                         .exposedHeaders("Content-Disposition")
                         .allowedMethods("*");
             }
