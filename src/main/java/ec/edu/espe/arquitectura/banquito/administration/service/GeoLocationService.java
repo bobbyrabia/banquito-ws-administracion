@@ -35,8 +35,8 @@ public class GeoLocationService {
         }
     }
 
-    public GeoLocation update (String id, GeoLocationReq geoLocationReq) {
-        Optional<GeoLocation> geoLocationTmp = this.geoLocationRepository.findById(id);
+    public GeoLocation update (String uuid, GeoLocationReq geoLocationReq) {
+        Optional<GeoLocation> geoLocationTmp = this.geoLocationRepository.findByUuid(uuid);
         if (geoLocationTmp.isEmpty()){
             throw new RuntimeException("No existe la locación");
         }else {
@@ -76,4 +76,11 @@ public class GeoLocationService {
         return this.geoLocationMapper.toGeoLocationResList(geoLocation);
     }
 
+    public void delete(String uuid){
+        Optional<GeoLocation> geoLocation = this.geoLocationRepository.findByUuid(uuid);
+        if (geoLocation.isEmpty()){
+            throw new RuntimeException("No se encontro resultados");
+        }
+        this.geoLocationRepository.delete(geoLocation.get());
+    }
 }

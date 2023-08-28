@@ -81,7 +81,7 @@ class GeoLocationServiceTest {
     @Test
     void updateGeoLocationTest() {
         //given
-        String id = "TestId";
+        String uuid = "TestId";
         GeoLocation geoLocation = GeoLocation.builder()
                 .countryCode("EC")
                 .levelCode("1")
@@ -89,10 +89,10 @@ class GeoLocationServiceTest {
                 .name("Pichincha")
                 .areaPhoneCode("03")
                 .build();
-        given(geoLocationRepository.findById(id)).willReturn(Optional.of(geoLocation));
+        given(geoLocationRepository.findByUuid(uuid)).willReturn(Optional.of(geoLocation));
         geoLocation.setAreaPhoneCode(geoLocationReq.getAreaPhoneCode());
         //when
-        underTest.update(id, geoLocationReq);
+        underTest.update(uuid, geoLocationReq);
         //then
         ArgumentCaptor<GeoLocation> geoLocationArgumentCaptor = ArgumentCaptor.forClass(GeoLocation.class);
         verify(geoLocationRepository).save(geoLocationArgumentCaptor.capture());
@@ -103,11 +103,11 @@ class GeoLocationServiceTest {
     @Test
     void updateGeoLocationTestThrowExceptionWhenGeoLocationDoesNotExist() {
         //given
-        String id = "TestId";
-        given(geoLocationRepository.findById(id)).willReturn(Optional.empty());
+        String uuid = "TestId";
+        given(geoLocationRepository.findByUuid(uuid)).willReturn(Optional.empty());
         //when
         //then
-        assertThatThrownBy(() -> underTest.update(id, geoLocationReq))
+        assertThatThrownBy(() -> underTest.update(uuid, geoLocationReq))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessage("No existe la locación");
         verify(geoLocationRepository, never()).save(any());
