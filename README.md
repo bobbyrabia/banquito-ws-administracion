@@ -1,2 +1,2 @@
 # banquito-ws-administracion
-#Prueba bq
+#Prueba bq2
