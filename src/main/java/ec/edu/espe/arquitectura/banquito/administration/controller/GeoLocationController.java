@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/geoLocation")
-@CrossOrigin
+@CrossOrigin({"*"})
 public class GeoLocationController {
     private final GeoLocationService geoLocationService;
 

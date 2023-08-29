@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/geoCountry")
-@CrossOrigin
+@CrossOrigin({"*"})
 public class GeoCountryController {
     private final GeoCountryService geoCountryService;
 
