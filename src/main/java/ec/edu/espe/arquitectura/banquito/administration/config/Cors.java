@@ -13,7 +13,7 @@ public class Cors {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
+                        .allowedOrigins("https://striped-reserve-397605.web.app/")
                         .exposedHeaders("Content-Disposition")
                         .allowedMethods("*");
             }
