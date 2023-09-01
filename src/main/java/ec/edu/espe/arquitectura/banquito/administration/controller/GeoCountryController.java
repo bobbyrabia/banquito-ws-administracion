@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("api/v1/geoCountry")
+@RequestMapping("/api/v1/geoCountry")
 public class GeoCountryController {
     private final GeoCountryService geoCountryService;
 
