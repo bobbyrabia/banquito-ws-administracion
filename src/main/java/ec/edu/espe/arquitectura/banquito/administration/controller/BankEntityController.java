@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/bankEntity")
+@RequestMapping("api/v1/bankEntity")
 public class BankEntityController {
     private final BankEntityService bankEntityService;
 

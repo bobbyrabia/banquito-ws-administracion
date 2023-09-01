@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/holiday")
+@RequestMapping("api/v1/holiday")
 public class HolidayController {
 
     private final HolidayService holidayService;

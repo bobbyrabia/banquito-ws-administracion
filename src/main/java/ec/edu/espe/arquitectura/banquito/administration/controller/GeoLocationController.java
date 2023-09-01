@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/geoLocation")
+@RequestMapping("api/v1/geoLocation")
 public class GeoLocationController {
     private final GeoLocationService geoLocationService;
 
